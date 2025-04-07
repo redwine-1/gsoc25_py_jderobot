@@ -1,5 +1,5 @@
 import numpy as np
-from arena import Arena
+from robot.arena import Arena
 
 class Robot:
     """

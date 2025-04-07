@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-from arena import Arena
+from robot.arena import Arena
+import os
 
 
 def visualize(positions: np.ndarray, arena: Arena):
@@ -47,5 +48,5 @@ def visualize(positions: np.ndarray, arena: Arena):
         return point, path
 
     ani = FuncAnimation(fig, update, frames=len(positions), init_func=init, blit=True, interval=20)
-    ani.save("robot_motion.gif", writer="pillow") 
+    ani.save(os.path.join(os.getcwd(), "robot_motion.gif"), writer="pillow")
     plt.show()
